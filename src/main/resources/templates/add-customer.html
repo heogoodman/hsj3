@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <body>
 <form action="#" th:action="@{/customerspage/addcustomer}" th:object="${customerReqDTO}"method="post">
-    <label for="name">Name</label>
+    <label for="name">Name</label>                                     <!--타입에서앞에만 소문자로-->
     <input type="text" th:field="*{name}" id="name">
     <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
     <br/>

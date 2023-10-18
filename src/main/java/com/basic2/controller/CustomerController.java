@@ -39,7 +39,7 @@ public class CustomerController {
     }
 
     @GetMapping("/signup")
-    public String showSignUpForm(CustomerReqDTO customer) {
+    public String showSignUpForm(CustomerReqDTO customer) { // add-customer.html로갈때 Cus~~매개변수를 넘겨라
         return "add-customer";
     }
 
