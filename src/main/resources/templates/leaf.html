@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot Thymeleaf</title>
+</head>
+<body>
+<h1 th:text="${name}">네임</h1>  <!-- 가져오기때문에 네임이 덮어씌어져서 네임은안나옴 -->
+<h1>Hello, <span th:text="${name}">스팬태그</span></h1> <!-- 가져오기때문에 스팬태그가 덮어씌어져서 스팬태그는 안나옴 -->
+<h1>Hello, [[${name}]]</h1>                                <!--직접 워크스페이스들어가서 개별적으로 열면 네임 스팬태그나옴-->
+</body>                                                    <!-- 개별적으로 열면 값을 못받아오기때문에 그대로글자가 html로나옴 -->
+</html>

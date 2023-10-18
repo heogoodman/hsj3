@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<body>
+<table>
+    <tr>
+        <th>Seq</th>
+        <th>name</th>
+        <th>email</th>
+        <th>age</th>
+        <th>entryDate</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>                  <!-- 규칙은 이름 똑같은거에 Stat 인듯 -->
+    <tr th:each="customer, customerStat : ${customers}">
+        <td th:text="${customerStat.count}"></td>    <!-- 아이디는 지금 삭제하고그래서 이빨이 빠져있어서 Seq로 설정하는법 -->
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.email}"></td>
+        <td th:text="${customer.age}"></td>
+        <td th:text="${#temporals.format(customer.entryDate,'yyyy-MM-dd hh:mm')}"></td>
+        <td><a th:href="@{/customerspage/edit/{id}(id=${customer.id})}">update</a></td>
+        <td><a th:href="@{/customerspage/delete/{id}(id=${customer.id})}">delete</a></td>
+    </tr>
+</table>
+<p><a href="/customerspage/signup">Insert</a></p>
+</body>
+</html>
